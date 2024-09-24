@@ -16,13 +16,13 @@ data "buildkite_cluster" "hello" {
 }
 
 data "github_repository" "hello" {
-  full_name = "gdimit07/hello"  
+  full_name = "gdimit07/hello"
 }
 
 resource "github_repository_webhook" "hello" {
   repository = data.github_repository.hello.name
   configuration {
-    url = buildkite_pipeline.hello-ci-cd.webhook_url
+    url          = buildkite_pipeline.hello-ci-cd.webhook_url
     content_type = "application/json"
     insecure_ssl = false
   }
