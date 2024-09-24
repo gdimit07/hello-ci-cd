@@ -15,6 +15,10 @@ terraform {
       source  = "buildkite/buildkite"
       version = "~> 1.0"
     }
+    github = {
+      source  = "integrations/github"
+      version = "~> 4.0"
+    }
   }
 }
 
@@ -25,3 +29,5 @@ provider "aws" {
 provider "buildkite" {
   organization = "gdimit07"
 }
+
+provider "github" {}
